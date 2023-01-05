@@ -1,0 +1,39 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+<div class="conatiner text-center" style="margin-top: 80px;">
+    <div class="col-12">
+        <h4 class="mb-3 mt-3">User Login</h4>
+        <hr>
+        <!-- messages -->
+        {% include 'inc/msg.html' %}
+    </div>
+</div>
+<section class="py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <form action=""method="post" autocomplete="off">
+                    {% csrf_token %}
+                    <div class="mb-4">
+                        <label for="username" class="forn-label">Username</label>
+                        <input type="text" name="username" id="username" class="form-control" placeholder="Enter your UserName">
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="forn-label">Password</label>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Enter your Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+            <div class="col-lg-5 d-lg-block d-none mx-5">
+                <img src="{% static 'images/l.jpg' %}" alt="" width="100%"height="300px">
+            </div>
+            
+        </div>
+    </div>
+
+</section>
+
+
+{% endblock content %}

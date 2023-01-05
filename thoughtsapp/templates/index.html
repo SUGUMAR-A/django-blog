@@ -1,0 +1,66 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<div class="container-fluid text-capitalize" style="margin-top:70px;" >
+
+  <div class="row">
+
+    <div class="col-12">
+        <h4 class="mb-3 text-secondary text-center">Top Thoughts</h4>
+        <hr style="border-color:#b8bfc2;">
+    </div>
+    {% for item in posts %}
+    <div class="col-md-4 col-lg-3">
+        <div class="card my-3">
+            <img src="{{item.images.url}}"  class="card-image-top"style=" height: 350px;" alt="Thoughts">
+
+            <div class="card-header text-center text-secondary">
+                <h5 class="card-text text-secondary text-uppercase">{{ item.title }}</h5>
+            </div>
+          <div class="card-body">
+            <p class="card-text"><q>{{item.body}}</q></p>
+          </div>
+          <div class="card-footer ">
+                <div class="col">
+                    <div class="">
+                      <span class="text-danger"><s><i class="fa-regular fa-face-smile"></i> {{item.type}}</s></span>
+                    </div>
+                    <div class="mt-3">
+                      <span class="text-primary"><i class="fa-solid fa-feather-pointed"></i> {{item.author}}</span>
+                    </div>
+                </div>
+                  <span class="text-secondary float-end"><i class="fa-regular fa-calendar-days"></i> {{item.created_at | date}}</span>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% for items in createposts %}
+    <div class="col-md-4 col-lg-3">
+        <div class="card my-3">
+            <img src="{{items.images.url}}"  class="card-image-top"style=" height: 350px;" alt="Thoughts">
+
+            <div class="card-header text-center text-secondary">
+                <h5 class="card-text text-secondary text-uppercase">{{ items.title }}</h5>
+            </div>
+          <div class="card-body">
+            <p class="card-text"><q>{{items.body}}</q></p>
+          </div>
+          <div class="card-footer ">
+                <div class="col">
+                    <div class="">
+                      <span class="text-danger"><s><i class="fa-regular fa-face-smile"></i> {{items.type}}</s></span>
+                    </div>
+                    <div class="mt-3">
+                      <span class="text-primary"><i class="fa-solid fa-feather-pointed"></i> {{items.author}}</span>
+                    </div>
+                </div>
+                  <span class="text-secondary float-end"><i class="fa-regular fa-calendar-days"></i> {{items.created_at | date}}</span>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

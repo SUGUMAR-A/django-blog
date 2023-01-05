@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:ital,wght@0,400;0,700;0,900;1,300&display=swap');
+
+*{
+    font-family: 'Roboto';
+    font-weight: 700;
+    text-decoration: none;
+}
+nav ol li a{
+    text-decoration: none;
+    
+}
+.col-6 a{
+    text-decoration: none;
+    padding-left: 10px;
+    
+}
+.col-6 a:hover{
+    color: #ff040f;
+}
+div h4{
+    font-family: 'poppins';
+    font-weight: 600;
+}
+
